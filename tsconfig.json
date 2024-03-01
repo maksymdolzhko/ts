@@ -6,6 +6,7 @@
     "sourceMap": true,
     "exactOptionalPropertyTypes": true,
     "noImplicitOverride": true,
+    "noUncheckedIndexedAccess": false,
     "strict": true,
     "outDir": "./dist",
     "incremental": true,
