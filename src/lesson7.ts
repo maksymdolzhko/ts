@@ -109,23 +109,30 @@
 
 {
   interface IObj {
-    [x: string]: string;
+    [x: string]: string | number | boolean;
   }
   const o: IObj = {
     name: 'qwerty',
     1: '_',
-    987654321: '0987654321',
+    bool: true,
+    987654321: 987654321,
     id: 'qwerty_0987654321'
   }
 
-  type ObjKeys = keyof IObj;
   function checker(obj: IObj ){
+    let buff: any[] = [];
+
     for (let key in obj) {
-      console.log(typeof key as ObjKeys )
+      let type = typeof obj[key];
+      if(!buff.includes(type)){
+        buff.push(type);
+      }
     }  
+
+    return buff;
   }
 
   const result = checker(o);
 
-  console.log('result :::', result);
+  console.log('result :::', result.length ? 'Різні типи': 'Однаковий тип');
 }
