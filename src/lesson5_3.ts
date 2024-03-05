@@ -31,6 +31,9 @@ import { Colors, FigureName, TAndle } from "./types";
 
 
   // А цей що нижче з помилкою в 63-67 строчці і не можу зрозуміти чому і що не так:
+  // Property 'widthA' does not exist on type 'T1 | T2 | T3'.
+  // Property 'widthA' does not exist on type 'T3'.ts(2339)
+  
 
   interface TBase {
     widthA: number;
