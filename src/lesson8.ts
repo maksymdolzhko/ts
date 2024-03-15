@@ -1,3 +1,21 @@
+
+
+
+{
+  function zip<T, U>(first: T[], second: U[]): Array<[T,U]> {
+    const minLength = Math.min(first.length, second.length);
+    const result: Array<[T,U]> = [];
+    for (let i = 0; i < minLength; i++) {
+      result.push([first[i], second[i]])
+    }
+    return result;
+  }
+
+  const q1: Array<[number, string]> = zip([1, 2, 3, 4, 5, 6], ["1", "2", "3"]);
+  const q2: Array<[boolean, boolean]> = zip([true], [false, false]);
+  // console.log(q1, q2);
+}
+
 // Cтворіть дженерик інтерфейс для функції зворотнього виклику CallbackFn<T>, яка приймає два параметри:
 // - err: Error | null,
 // - data: T | null
@@ -32,7 +50,7 @@
         fn(null, 'Success!');
     }
 
-    doSomething(callbackFn);
+    // doSomething(callbackFn);
 }
 
 // 1) Створіть дженерик (загальну) функцію purge(),
@@ -73,14 +91,14 @@ const magazines = [
     const _STRINGS: string[] = ['1', '2', '3', '4', '5', '6', '7', '8', '9'];
 
     const result1 = purge(inventory);
-    console.log('result 1 :::', result1);
+    // console.log('result 1 :::', result1);
 
     const result2 = purge(_NUMBERS);
-    console.log('result 2 :::', result2);
+    // console.log('result 2 :::', result2);
 
     const purgeNumbers = purge<number>(_NUMBERS);
     // const purgeNumbers = purge<number>(_STRINGS); // Error: Type 'string' is not assignable to type 'number';
-    console.log('purgeNumbers result :::', purgeNumbers);
+    // console.log('purgeNumbers result :::', purgeNumbers);
 }
 
 
@@ -116,10 +134,10 @@ const magazines = [
     const bookShelf = new Shell<TInventor>();
     bookShelf.items = inventory;
     const firtsBookShelf = bookShelf.getFirst();
-    console.log('First Shelf`s Title :::', firtsBookShelf.title);
+    // console.log('First Shelf`s Title :::', firtsBookShelf.title);
 
     const magazineShelf = new Shell<TMagazine>();
     magazineShelf.items = magazines;
     const firtsMagazinesShelf = magazineShelf.getFirst();
-    console.log('First Magazine`s  Title :::', firtsMagazinesShelf.title);
+    // console.log('First Magazine`s  Title :::', firtsMagazinesShelf.title);
 }
