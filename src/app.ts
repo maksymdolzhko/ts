@@ -5,5 +5,7 @@
 // import './lesson5_3.ts';
 // import './lesson7.ts';
 // import './lesson8.ts';
-import './lesson9.ts';
+// import './lesson9.ts';
+import './lesson11.ts';
+import './lesson12.ts';
 // import './lessonExample.ts';

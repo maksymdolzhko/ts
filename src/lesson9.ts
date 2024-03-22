@@ -63,3 +63,14 @@
     console.log('Books :::', shelf.find('GSU_GSU_GSU'));; // Null
     
 }
+
+{
+    function aaa(a: number | string, b = a, c = b): null{
+        console.log('AAAAA :::', a, b, c )
+        return null;
+      }
+    
+      aaa(123);
+      aaa('BBBBBB');
+    
+}
